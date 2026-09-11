@@ -1,0 +1,24 @@
+# Entity Relationship Diagram
+
+```mermaid
+erDiagram
+
+    USERS ||--o| PROVIDERS : has
+
+    PROVIDERS ||--o{ SERVICES : offers
+
+    SERVICES ||--|| ROUTES : has
+
+    USERS ||--o{ SEAT_REQUESTS : makes
+
+    SERVICES ||--o{ SEAT_REQUESTS : receives
+
+    SEAT_REQUESTS ||--o| BOOKINGS : creates
+
+    USERS ||--o{ BOOKINGS : makes
+
+    SERVICES ||--o{ BOOKINGS : has
+
+    USERS ||--o{ REVIEWS : writes
+
+    SERVICES ||--o{ REVIEWS : receives
